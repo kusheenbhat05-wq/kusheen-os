@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Kusheen.OS — an interactive digital twin dashboard."
+    >
+
+    <title>Kusheen.OS — Digital Twin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         BACKGROUND
+    ========================================== -->
+
+    <div class="background">
+        <div class="grid"></div>
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+    </div>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">K</div>
+
+            <div>
+                <h1>KUSHEEN.OS</h1>
+                <span>DIGITAL TWIN v1.0</span>
+            </div>
+        </div>
+
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+
+            <div>
+                <strong id="systemStatus">
+                    ONLINE
+                </strong>
+
+                <small>
+                    System operational
+                </small>
+            </div>
+        </div>
+
+
+        <nav class="navigation">
+
+            <p class="nav-title">
+                SYSTEM
+            </p>
+
+            <a
+                href="#overview"
+                class="nav-link active"
+            >
+                <span>01</span>
+                Overview
+            </a>
+
+            <a
+                href="#skills"
+                class="nav-link"
+            >
+                <span>02</span>
+                Skills
+            </a>
+
+            <a
+                href="#projects"
+                class="nav-link"
+            >
+                <span>03</span>
+                Projects
+            </a>
+
+            <a
+                href="#github"
+                class="nav-link"
+            >
+                <span>04</span>
+                GitHub
+            </a>
+
+            <a
+                href="#goals"
+                class="nav-link"
+            >
+                <span>05</span>
+                Goals
+            </a>
+
+            <a
+                href="#focus"
+                class="nav-link"
+            >
+                <span>06</span>
+                Focus
+            </a>
+
+            <a
+                href="#console"
+                class="nav-link"
+            >
+                <span>07</span>
+                Console
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="mini-profile">
+
+                <div class="avatar">
+                    KB
+                </div>
+
+                <div>
+                    <strong>Kusheen Bhat</strong>
+                    <small>B.Tech CSE</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="main">
+
+
+        <!-- =====================================
+             TOP BAR
+        ====================================== -->
+
+        <header class="topbar">
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+
+            <div class="breadcrumb">
+
+                <span>ROOT</span>
+                <b>/</b>
+                <strong>OVERVIEW</strong>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="live-clock">
+
+                    <span class="live-dot"></span>
+
+                    <span id="clock">
+                        00:00:00
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="icon-button"
+                    id="themeButton"
+                    aria-label="Toggle theme"
+                >
+                    ◐
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             OVERVIEW
+        ====================================== -->
+
+        <section
+            class="section overview"
+            id="overview"
+        >
+
+            <div class="hero">
+
+                <div class="hero-copy">
+
+                    <div class="system-label">
+                        <span></span>
+                        DIGITAL TWIN ACTIVE
+                    </div>
+
+
+                    <h2>
+                        Hello, I'm
+                        <span>Kusheen.</span>
+                    </h2>
+
+
+                    <p class="hero-description">
+                        This is my interactive digital space —
+                        a live representation of what I'm
+                        learning, building and working toward.
+                    </p>
+
+
+                    <div class="current-state">
+
+                        <div class="state-indicator">
+                            <span class="pulse"></span>
+                        </div>
+
+                        <div>
+                            <small>CURRENT STATE</small>
+
+                            <strong id="currentState">
+                                BUILDING
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="state-controls">
+
+                        <button
+                            class="state-button active"
+                            data-state="BUILDING"
+                        >
+                            BUILDING
+                        </button>
+
+                        <button
+                            class="state-button"
+                            data-state="CODING"
+                        >
+                            CODING
+                        </button>
+
+                        <button
+                            class="state-button"
+                            data-state="STUDYING"
+                        >
+                            STUDYING
+                        </button>
+
+                        <button
+                            class="state-button"
+                            data-state="AVAILABLE"
+                        >
+                            AVAILABLE
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DIGITAL CORE -->
+
+                <div class="digital-core">
+
+                    <div class="core-orbit orbit-1"></div>
+                    <div class="core-orbit orbit-2"></div>
+                    <div class="core-orbit orbit-3"></div>
+
+                    <div class="core">
+
+                        <div class="core-inner">
+                            K
+                        </div>
+
+                    </div>
+
+
+                    <div class="core-label">
+                        <span>CORE</span>
+                        <strong>ACTIVE</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 LIVE METRICS
+            ================================== -->
+
+            <div class="metrics-grid">
+
+                <article class="metric-card">
+
+                    <div class="metric-header">
+                        <span>CODING</span>
+                        <span>01</span>
+                    </div>
+
+                    <strong
+                        class="metric-value"
+                        data-metric="coding"
+                    >
+                        72%
+                    </strong>
+
+                    <div class="metric-bar">
+                        <span style="width:72%"></span>
+                    </div>
+
+                    <small>
+                        Current focus level
+                    </small>
+
+                </article>
+
+
+                <article class="metric-card">
+
+                    <div class="metric-header">
+                        <span>STUDY</span>
+                        <span>02</span>
+                    </div>
+
+                    <strong
+                        class="metric-value"
+                        data-metric="study"
+                    >
+                        84%
+                    </strong>
+
+                    <div class="metric-bar">
+                        <span style="width:84%"></span>
+                    </div>
+
+                    <small>
+                        Weekly progress
+                    </small>
+
+                </article>
+
+
+                <article class="metric-card">
+
+                    <div class="metric-header">
+                        <span>PROJECTS</span>
+                        <span>03</span>
+                    </div>
+
+                    <strong
+                        class="metric-value"
+                        id="projectCount"
+                    >
+                        03
+                    </strong>
+
+                    <div class="metric-meta">
+                        Active portfolio projects
+                    </div>
+
+                </article>
+
+
+                <article class="metric-card">
+
+                    <div class="metric-header">
+                        <span>STREAK</span>
+                        <span>04</span>
+                    </div>
+
+                    <strong
+                        class="metric-value"
+                        id="streakCount"
+                    >
+                        07
+                    </strong>
+
+                    <div class="metric-meta">
+                        Consecutive productive days
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             SKILLS
+        ====================================== -->
+
+        <section
+            class="section"
+            id="skills"
+        >
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-number">
+                        02 / SKILLS
+                    </span>
+
+                    <h3>
+                        Technical Matrix
+                    </h3>
+                </div>
+
+                <span class="section-description">
+                    Current learning profile
+                </span>
+
+            </div>
+
+
+            <div class="skills-layout">
+
+
+                <div class="skills-panel">
+
+                    <div class="skill-row">
+
+                        <div class="skill-name">
+                            <strong>JavaScript</strong>
+                            <span>Frontend / Logic</span>
+                        </div>
+
+                        <div class="skill-progress">
+                            <span style="width:78%"></span>
+                        </div>
+
+                        <strong>78%</strong>
+
+                    </div>
+
+
+                    <div class="skill-row">
+
+                        <div class="skill-name">
+                            <strong>Java</strong>
+                            <span>Programming</span>
+                        </div>
+
+                        <div class="skill-progress">
+                            <span style="width:70%"></span>
+                        </div>
+
+                        <strong>70%</strong>
+
+                    </div>
+
+
+                    <div class="skill-row">
+
+                        <div class="skill-name">
+                            <strong>HTML / CSS</strong>
+                            <span>Web Development</span>
+                        </div>
+
+                        <div class="skill-progress">
+                            <span style="width:88%"></span>
+                        </div>
+
+                        <strong>88%</strong>
+
+                    </div>
+
+
+                    <div class="skill-row">
+
+                        <div class="skill-name">
+                            <strong>SQL</strong>
+                            <span>Database</span>
+                        </div>
+
+                        <div class="skill-progress">
+                            <span style="width:68%"></span>
+                        </div>
+
+                        <strong>68%</strong>
+
+                    </div>
+
+
+                    <div class="skill-row">
+
+                        <div class="skill-name">
+                            <strong>Git / GitHub</strong>
+                            <span>Version Control</span>
+                        </div>
+
+                        <div class="skill-progress">
+                            <span style="width:65%"></span>
+                        </div>
+
+                        <strong>65%</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="skill-core">
+
+                    <div class="skill-ring">
+                        <span>CS</span>
+                    </div>
+
+                    <p>
+                        COMPUTER<br>
+                        SCIENCE
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             PROJECTS
+        ====================================== -->
+
+        <section
+            class="section"
+            id="projects"
+        >
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-number">
+                        03 / PROJECTS
+                    </span>
+
+                    <h3>
+                        Project Universe
+                    </h3>
+                </div>
+
+                <span class="section-description">
+                    Things I've built
+                </span>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+
+                <article
+                    class="project-card"
+                    data-project="DEVORA"
+                >
+
+                    <div class="project-number">
+                        01
+                    </div>
+
+                    <div class="project-icon">
+                        D
+                    </div>
+
+                    <div class="project-info">
+
+                        <span>WEB APPLICATION</span>
+
+                        <h4>DEVORA</h4>
+
+                        <p>
+                            A futuristic developer command
+                            center and productivity dashboard.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                    </div>
+
+                    <span class="project-arrow">
+                        ↗
+                    </span>
+
+                </article>
+
+
+                <article
+                    class="project-card"
+                    data-project="CELEBRATION"
+                >
+
+                    <div class="project-number">
+                        02
+                    </div>
+
+                    <div class="project-icon">
+                        C
+                    </div>
+
+                    <div class="project-info">
+
+                        <span>INTERACTIVE EXPERIENCE</span>
+
+                        <h4>
+                            Interactive Celebration
+                        </h4>
+
+                        <p>
+                            An animated interactive web
+                            experience built with JavaScript.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                    </div>
+
+                    <span class="project-arrow">
+                        ↗
+                    </span>
+
+                </article>
+
+
+                <article
+                    class="project-card"
+                    data-project="KUSHEEN.OS"
+                >
+
+                    <div class="project-number">
+                        03
+                    </div>
+
+                    <div class="project-icon">
+                        K
+                    </div>
+
+                    <div class="project-info">
+
+                        <span>EXPERIMENTAL</span>
+
+                        <h4>
+                            KUSHEEN.OS
+                        </h4>
+
+                        <p>
+                            A live digital twin representing
+                            my developer identity.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>APIs</span>
+                            <span>UI</span>
+                        </div>
+
+                    </div>
+
+                    <span class="project-arrow">
+                        ↗
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             GITHUB
+        ====================================== -->
+
+        <section
+            class="section"
+            id="github"
+        >
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-number">
+                        04 / GITHUB
+                    </span>
+
+                    <h3>
+                        GitHub Pulse
+                    </h3>
+                </div>
+
+                <span class="section-description">
+                    Public developer activity
+                </span>
+
+            </div>
+
+
+            <div class="github-panel">
+
+                <div class="github-main">
+
+                    <div class="github-avatar">
+                        KB
+                    </div>
+
+                    <div>
+
+                        <span>
+                            GITHUB USER
+                        </span>
+
+                        <h4>
+                            kusheenbhat05-wq
+                        </h4>
+
+                        <p>
+                            Public repositories and
+                            development activity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="github-stats">
+
+                    <div>
+                        <strong id="repoCount">
+                            —
+                        </strong>
+
+                        <span>
+                            REPOSITORIES
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong id="followerCount">
+                            —
+                        </strong>
+
+                        <span>
+                            FOLLOWERS
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong id="followingCount">
+                            —
+                        </strong>
+
+                        <span>
+                            FOLLOWING
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="https://github.com/kusheenbhat05-wq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="github-button"
+                >
+                    OPEN GITHUB ↗
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             GOALS
+        ====================================== -->
+
+        <section
+            class="section"
+            id="goals"
+        >
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-number">
+                        05 / GOALS
+                    </span>
+
+                    <h3>
+                        Mission Control
+                    </h3>
+                </div>
+
+                <span class="section-description">
+                    Current objectives
+                </span>
+
+            </div>
+
+
+            <div class="goals-panel">
+
+                <div class="goal-item">
+
+                    <button
+                        class="goal-check"
+                        data-goal="0"
+                    >
+                        ✓
+                    </button>
+
+                    <div>
+                        <strong>
+                            Build a professional portfolio
+                        </strong>
+
+                        <span>
+                            Career / Development
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="goal-item">
+
+                    <button
+                        class="goal-check"
+                        data-goal="1"
+                    >
+                        ✓
+                    </button>
+
+                    <div>
+                        <strong>
+                            Improve DSA fundamentals
+                        </strong>
+
+                        <span>
+                            Learning
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="goal-item">
+
+                    <button
+                        class="goal-check"
+                        data-goal="2"
+                    >
+                        ✓
+                    </button>
+
+                    <div>
+                        <strong>
+                            Build internship-ready projects
+                        </strong>
+
+                        <span>
+                            Career
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="goal-item">
+
+                    <button
+                        class="goal-check"
+                        data-goal="3"
+                    >
+                        ✓
+                    </button>
+
+                    <div>
+                        <strong>
+                            Secure an internship
+                        </strong>
+
+                        <span>
+                            Career Goal
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="goal-progress">
+
+                <div>
+                    <span>MISSION PROGRESS</span>
+
+                    <strong id="goalPercentage">
+                        0%
+                    </strong>
+                </div>
+
+                <div class="large-progress">
+                    <span
+                        id="goalProgressBar"
+                        style="width:0%"
+                    ></span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             FOCUS
+        ====================================== -->
+
+        <section
+            class="section"
+            id="focus"
+        >
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-number">
+                        06 / FOCUS
+                    </span>
+
+                    <h3>
+                        Focus Core
+                    </h3>
+                </div>
+
+                <span class="section-description">
+                    Deep work session
+                </span>
+
+            </div>
+
+
+            <div class="focus-panel">
+
+                <div class="focus-timer">
+
+                    <div class="timer-ring">
+
+                        <svg viewBox="0 0 220 220">
+
+                            <circle
+                                class="timer-track"
+                                cx="110"
+                                cy="110"
+                                r="94"
+                            ></circle>
+
+                            <circle
+                                class="timer-progress"
+                                id="timerProgress"
+                                cx="110"
+                                cy="110"
+                                r="94"
+                            ></circle>
+
+                        </svg>
+
+                        <div class="timer-value">
+
+                            <strong id="timerDisplay">
+                                25:00
+                            </strong>
+
+                            <span>
+                                FOCUS SESSION
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timer-controls">
+
+                        <button
+                            id="startTimer"
+                            class="primary-button"
+                        >
+                            START
+                        </button>
+
+                        <button
+                            id="pauseTimer"
+                            class="secondary-button"
+                        >
+                            PAUSE
+                        </button>
+
+                        <button
+                            id="resetTimer"
+                            class="secondary-button"
+                        >
+                            RESET
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="focus-info">
+
+                    <span>
+                        CURRENT OBJECTIVE
+                    </span>
+
+                    <h4>
+                        Build. Learn. Improve.
+                    </h4>
+
+                    <p>
+                        Stay focused for 25 minutes.
+                        Your completed sessions will
+                        be tracked locally.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CONSOLE
+        ====================================== -->
+
+        <section
+            class="section"
+            id="console"
+        >
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-number">
+                        07 / CONSOLE
+                    </span>
+
+                    <h3>
+                        System Console
+                    </h3>
+                </div>
+
+                <span class="section-description">
+                    Interactive command interface
+                </span>
+
+            </div>
+
+
+            <div class="console">
+
+                <div class="console-header">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <strong>
+                        kusheen@digital-twin:~
+                    </strong>
+
+                </div>
+
+
+                <div
+                    class="console-output"
+                    id="consoleOutput"
+                >
+
+                    <p>
+                        KUSHEEN.OS system initialized.
+                    </p>
+
+                    <p>
+                        Type <b>help</b> to see available
+                        commands.
+                    </p>
+
+                </div>
+
+
+                <div class="console-input">
+
+                    <span>
+                        >
+                    </span>
+
+                    <input
+                        type="text"
+                        id="consoleInput"
+                        placeholder="type a command..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
+
+        <footer>
+
+            <div>
+
+                <strong>
+                    KUSHEEN.OS
+                </strong>
+
+                <span>
+                    Digital Twin v1.0
+                </span>
+
+            </div>
+
+            <div>
+
+                Built with HTML · CSS · JavaScript
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
