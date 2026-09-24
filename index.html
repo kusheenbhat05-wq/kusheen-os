@@ -2,134 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Kusheen.OS — Developer Command Center</title>
 
     <meta
         name="description"
-        content="Kusheen.OS — an interactive digital twin dashboard."
+        content="Kusheen.OS — a personal developer command center by Kusheen Bhat."
     >
 
-    <title>Kusheen.OS — Digital Twin</title>
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
-    <!-- Main stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =========================================
-         BACKGROUND
-    ========================================== -->
+    <!-- ================= BACKGROUND ================= -->
 
-    <div class="background">
+    <div class="background" aria-hidden="true">
         <div class="grid"></div>
         <div class="glow glow-1"></div>
         <div class="glow glow-2"></div>
     </div>
 
 
-    <!-- =========================================
-         SIDEBAR
-    ========================================== -->
+    <!-- ================= SIDEBAR ================= -->
 
-    <aside class="sidebar" id="sidebar">
+    <aside class="sidebar">
 
         <div class="brand">
-            <div class="brand-logo">K</div>
+            <div class="brand-logo">KB</div>
 
             <div>
                 <h1>KUSHEEN.OS</h1>
-                <span>DIGITAL TWIN v1.0</span>
+                <span>DEVELOPER COMMAND CENTER</span>
             </div>
         </div>
 
 
         <div class="system-status">
-            <span class="status-dot"></span>
+            <div class="status-dot"></div>
 
             <div>
-                <strong id="systemStatus">
-                    ONLINE
-                </strong>
-
-                <small>
-                    System operational
-                </small>
+                <strong>SYSTEM ONLINE</strong>
+                <small>ALL SYSTEMS OPERATIONAL</small>
             </div>
         </div>
 
 
+        <div class="nav-title">NAVIGATION</div>
+
         <nav class="navigation">
 
-            <p class="nav-title">
-                SYSTEM
-            </p>
-
-            <a
-                href="#overview"
-                class="nav-link active"
-            >
+            <a class="nav-link active" href="#overview">
                 <span>01</span>
                 Overview
             </a>
 
-            <a
-                href="#skills"
-                class="nav-link"
-            >
+            <a class="nav-link" href="#skills">
                 <span>02</span>
                 Skills
             </a>
 
-            <a
-                href="#projects"
-                class="nav-link"
-            >
+            <a class="nav-link" href="#projects">
                 <span>03</span>
                 Projects
             </a>
 
-            <a
-                href="#github"
-                class="nav-link"
-            >
+            <a class="nav-link" href="#github">
                 <span>04</span>
                 GitHub
             </a>
 
-            <a
-                href="#goals"
-                class="nav-link"
-            >
+            <a class="nav-link" href="#goals">
                 <span>05</span>
                 Goals
             </a>
 
-            <a
-                href="#focus"
-                class="nav-link"
-            >
+            <a class="nav-link" href="#focus">
                 <span>06</span>
                 Focus
             </a>
 
-            <a
-                href="#console"
-                class="nav-link"
-            >
+            <a class="nav-link" href="#console">
                 <span>07</span>
                 Console
             </a>
@@ -141,13 +103,11 @@
 
             <div class="mini-profile">
 
-                <div class="avatar">
-                    KB
-                </div>
+                <div class="avatar">KB</div>
 
                 <div>
                     <strong>Kusheen Bhat</strong>
-                    <small>B.Tech CSE</small>
+                    <small>CS ENGINEERING · 2027</small>
                 </div>
 
             </div>
@@ -157,56 +117,44 @@
     </aside>
 
 
-    <!-- =========================================
-         MAIN
-    ========================================== -->
+    <!-- ================= MAIN ================= -->
 
     <main class="main">
 
-
-        <!-- =====================================
-             TOP BAR
-        ====================================== -->
+        <!-- TOPBAR -->
 
         <header class="topbar">
 
-            <button
-                class="menu-button"
-                id="menuButton"
-                aria-label="Open menu"
-            >
-                ☰
-            </button>
-
-
             <div class="breadcrumb">
-
-                <span>ROOT</span>
+                <span>KUSHEEN.OS</span>
                 <b>/</b>
-                <strong>OVERVIEW</strong>
-
+                <strong>COMMAND CENTER</strong>
             </div>
 
 
             <div class="topbar-right">
 
                 <div class="live-clock">
-
                     <span class="live-dot"></span>
-
-                    <span id="clock">
-                        00:00:00
-                    </span>
-
+                    <span id="clock">00:00:00</span>
                 </div>
-
 
                 <button
                     class="icon-button"
-                    id="themeButton"
+                    id="themeToggle"
+                    type="button"
                     aria-label="Toggle theme"
                 >
-                    ◐
+                    ☀️
+                </button>
+
+                <button
+                    class="menu-button"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open navigation"
+                >
+                    ☰
                 </button>
 
             </div>
@@ -214,9 +162,7 @@
         </header>
 
 
-        <!-- =====================================
-             OVERVIEW
-        ====================================== -->
+        <!-- ================= OVERVIEW ================= -->
 
         <section
             class="section overview"
@@ -229,34 +175,35 @@
 
                     <div class="system-label">
                         <span></span>
-                        DIGITAL TWIN ACTIVE
+                        DEVELOPER SYSTEM INITIALIZED
                     </div>
 
 
                     <h2>
-                        Hello, I'm
-                        <span>Kusheen.</span>
+                        BUILD.
+                        <span>CREATE.</span>
+                        EVOLVE.
                     </h2>
 
 
                     <p class="hero-description">
-                        This is my interactive digital space —
-                        a live representation of what I'm
-                        learning, building and working toward.
+                        Welcome to Kusheen.OS — my personal developer
+                        command center for building projects, tracking
+                        progress, sharpening technical skills and staying
+                        focused on the next challenge.
                     </p>
 
 
                     <div class="current-state">
 
                         <div class="state-indicator">
-                            <span class="pulse"></span>
+                            <div class="pulse"></div>
                         </div>
 
                         <div>
                             <small>CURRENT STATE</small>
-
                             <strong id="currentState">
-                                BUILDING
+                                Building & Learning
                             </strong>
                         </div>
 
@@ -267,30 +214,34 @@
 
                         <button
                             class="state-button active"
-                            data-state="BUILDING"
+                            type="button"
+                            data-state="Building & Learning"
                         >
                             BUILDING
                         </button>
 
                         <button
                             class="state-button"
-                            data-state="CODING"
+                            type="button"
+                            data-state="Deep Focus"
                         >
-                            CODING
+                            FOCUS
                         </button>
 
                         <button
                             class="state-button"
-                            data-state="STUDYING"
+                            type="button"
+                            data-state="Exploring Ideas"
                         >
-                            STUDYING
+                            EXPLORE
                         </button>
 
                         <button
                             class="state-button"
-                            data-state="AVAILABLE"
+                            type="button"
+                            data-state="Taking a Break"
                         >
-                            AVAILABLE
+                            BREAK
                         </button>
 
                     </div>
@@ -300,7 +251,7 @@
 
                 <!-- DIGITAL CORE -->
 
-                <div class="digital-core">
+                <div class="digital-core" aria-hidden="true">
 
                     <div class="core-orbit orbit-1"></div>
                     <div class="core-orbit orbit-2"></div>
@@ -309,15 +260,14 @@
                     <div class="core">
 
                         <div class="core-inner">
-                            K
+                            KB
                         </div>
 
                     </div>
 
-
                     <div class="core-label">
-                        <span>CORE</span>
-                        <strong>ACTIVE</strong>
+                        <span>SYSTEM CORE</span>
+                        <strong>ONLINE</strong>
                     </div>
 
                 </div>
@@ -325,79 +275,29 @@
             </div>
 
 
-            <!-- =================================
-                 LIVE METRICS
-            ================================== -->
+            <!-- METRICS -->
 
             <div class="metrics-grid">
 
                 <article class="metric-card">
 
                     <div class="metric-header">
-                        <span>CODING</span>
-                        <span>01</span>
-                    </div>
-
-                    <strong
-                        class="metric-value"
-                        data-metric="coding"
-                    >
-                        72%
-                    </strong>
-
-                    <div class="metric-bar">
-                        <span style="width:72%"></span>
-                    </div>
-
-                    <small>
-                        Current focus level
-                    </small>
-
-                </article>
-
-
-                <article class="metric-card">
-
-                    <div class="metric-header">
-                        <span>STUDY</span>
-                        <span>02</span>
-                    </div>
-
-                    <strong
-                        class="metric-value"
-                        data-metric="study"
-                    >
-                        84%
-                    </strong>
-
-                    <div class="metric-bar">
-                        <span style="width:84%"></span>
-                    </div>
-
-                    <small>
-                        Weekly progress
-                    </small>
-
-                </article>
-
-
-                <article class="metric-card">
-
-                    <div class="metric-header">
                         <span>PROJECTS</span>
-                        <span>03</span>
+                        <span>LIVE</span>
                     </div>
 
                     <strong
                         class="metric-value"
-                        id="projectCount"
+                        data-count="5"
                     >
-                        03
+                        0
                     </strong>
 
-                    <div class="metric-meta">
-                        Active portfolio projects
+                    <div class="metric-bar">
+                        <span style="width: 82%"></span>
                     </div>
+
+                    <small>ACTIVE PROJECT ECOSYSTEM</small>
 
                 </article>
 
@@ -405,20 +305,68 @@
                 <article class="metric-card">
 
                     <div class="metric-header">
-                        <span>STREAK</span>
-                        <span>04</span>
+                        <span>SKILLS</span>
+                        <span>TRACKED</span>
                     </div>
 
                     <strong
                         class="metric-value"
-                        id="streakCount"
+                        data-count="8"
                     >
-                        07
+                        0
                     </strong>
 
-                    <div class="metric-meta">
-                        Consecutive productive days
+                    <div class="metric-bar">
+                        <span style="width: 76%"></span>
                     </div>
+
+                    <small>TECHNICAL STACK</small>
+
+                </article>
+
+
+                <article class="metric-card">
+
+                    <div class="metric-header">
+                        <span>FOCUS</span>
+                        <span>GOAL</span>
+                    </div>
+
+                    <strong
+                        class="metric-value"
+                        data-count="25"
+                    >
+                        0
+                    </strong>
+
+                    <div class="metric-bar">
+                        <span style="width: 65%"></span>
+                    </div>
+
+                    <small>MINUTE SESSION</small>
+
+                </article>
+
+
+                <article class="metric-card">
+
+                    <div class="metric-header">
+                        <span>STATUS</span>
+                        <span>LIVE</span>
+                    </div>
+
+                    <strong
+                        class="metric-value"
+                        style="font-size:18px;"
+                    >
+                        ACTIVE
+                    </strong>
+
+                    <div class="metric-bar">
+                        <span style="width: 100%"></span>
+                    </div>
+
+                    <small>DEVELOPER MODE</small>
 
                 </article>
 
@@ -427,9 +375,7 @@
         </section>
 
 
-        <!-- =====================================
-             SKILLS
-        ====================================== -->
+        <!-- ================= SKILLS ================= -->
 
         <section
             class="section"
@@ -439,24 +385,18 @@
             <div class="section-heading">
 
                 <div>
-                    <span class="section-number">
-                        02 / SKILLS
-                    </span>
-
-                    <h3>
-                        Technical Matrix
-                    </h3>
+                    <span class="section-number">02 / SKILLS</span>
+                    <h3>Technical Stack</h3>
                 </div>
 
-                <span class="section-description">
-                    Current learning profile
-                </span>
+                <p class="section-description">
+                    Skills currently being developed and practiced.
+                </p>
 
             </div>
 
 
             <div class="skills-layout">
-
 
                 <div class="skills-panel">
 
@@ -468,10 +408,42 @@
                         </div>
 
                         <div class="skill-progress">
-                            <span style="width:78%"></span>
+                            <span style="width:82%"></span>
                         </div>
 
-                        <strong>78%</strong>
+                        <strong>82%</strong>
+
+                    </div>
+
+
+                    <div class="skill-row">
+
+                        <div class="skill-name">
+                            <strong>HTML / CSS</strong>
+                            <span>Web Development</span>
+                        </div>
+
+                        <div class="skill-progress">
+                            <span style="width:90%"></span>
+                        </div>
+
+                        <strong>90%</strong>
+
+                    </div>
+
+
+                    <div class="skill-row">
+
+                        <div class="skill-name">
+                            <strong>React.js</strong>
+                            <span>Frontend</span>
+                        </div>
+
+                        <div class="skill-progress">
+                            <span style="width:68%"></span>
+                        </div>
+
+                        <strong>68%</strong>
 
                     </div>
 
@@ -480,6 +452,22 @@
 
                         <div class="skill-name">
                             <strong>Java</strong>
+                            <span>Programming</span>
+                        </div>
+
+                        <div class="skill-progress">
+                            <span style="width:72%"></span>
+                        </div>
+
+                        <strong>72%</strong>
+
+                    </div>
+
+
+                    <div class="skill-row">
+
+                        <div class="skill-name">
+                            <strong>Python</strong>
                             <span>Programming</span>
                         </div>
 
@@ -495,47 +483,15 @@
                     <div class="skill-row">
 
                         <div class="skill-name">
-                            <strong>HTML / CSS</strong>
-                            <span>Web Development</span>
-                        </div>
-
-                        <div class="skill-progress">
-                            <span style="width:88%"></span>
-                        </div>
-
-                        <strong>88%</strong>
-
-                    </div>
-
-
-                    <div class="skill-row">
-
-                        <div class="skill-name">
-                            <strong>SQL</strong>
+                            <strong>SQL / DBMS</strong>
                             <span>Database</span>
                         </div>
 
                         <div class="skill-progress">
-                            <span style="width:68%"></span>
+                            <span style="width:74%"></span>
                         </div>
 
-                        <strong>68%</strong>
-
-                    </div>
-
-
-                    <div class="skill-row">
-
-                        <div class="skill-name">
-                            <strong>Git / GitHub</strong>
-                            <span>Version Control</span>
-                        </div>
-
-                        <div class="skill-progress">
-                            <span style="width:65%"></span>
-                        </div>
-
-                        <strong>65%</strong>
+                        <strong>74%</strong>
 
                     </div>
 
@@ -545,12 +501,12 @@
                 <div class="skill-core">
 
                     <div class="skill-ring">
-                        <span>CS</span>
+                        <span>76%</span>
                     </div>
 
                     <p>
-                        COMPUTER<br>
-                        SCIENCE
+                        OVERALL<br>
+                        TECHNICAL DEVELOPMENT
                     </p>
 
                 </div>
@@ -560,9 +516,7 @@
         </section>
 
 
-        <!-- =====================================
-             PROJECTS
-        ====================================== -->
+        <!-- ================= PROJECTS ================= -->
 
         <section
             class="section"
@@ -572,18 +526,13 @@
             <div class="section-heading">
 
                 <div>
-                    <span class="section-number">
-                        03 / PROJECTS
-                    </span>
-
-                    <h3>
-                        Project Universe
-                    </h3>
+                    <span class="section-number">03 / PROJECTS</span>
+                    <h3>Build Archive</h3>
                 </div>
 
-                <span class="section-description">
-                    Things I've built
-                </span>
+                <p class="section-description">
+                    Selected projects from my developer ecosystem.
+                </p>
 
             </div>
 
@@ -591,28 +540,70 @@
             <div class="projects-grid">
 
 
+                <!-- DEVORA -->
+
                 <article
                     class="project-card"
-                    data-project="DEVORA"
+                    data-link="https://kusheenbhat05-wq.github.io/devora-developer-dashboard/"
+                    tabindex="0"
+                    role="link"
                 >
 
-                    <div class="project-number">
-                        01
-                    </div>
+                    <span class="project-number">01</span>
 
                     <div class="project-icon">
-                        D
+                        DV
                     </div>
 
                     <div class="project-info">
 
-                        <span>WEB APPLICATION</span>
+                        <span>DEVELOPER TOOL</span>
 
-                        <h4>DEVORA</h4>
+                        <h4>Devora</h4>
 
                         <p>
-                            A futuristic developer command
-                            center and productivity dashboard.
+                            A developer command center for tracking
+                            projects, skills, focus sessions and notes.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>Dashboard</span>
+                            <span>UI/UX</span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-arrow">↗</div>
+
+                </article>
+
+
+                <!-- KUSHEEN OS -->
+
+                <article
+                    class="project-card"
+                    data-link="https://kusheenbhat05-wq.github.io/kusheen-os/"
+                    tabindex="0"
+                    role="link"
+                >
+
+                    <span class="project-number">02</span>
+
+                    <div class="project-icon">
+                        OS
+                    </div>
+
+                    <div class="project-info">
+
+                        <span>PERSONAL SYSTEM</span>
+
+                        <h4>Kusheen.OS</h4>
+
+                        <p>
+                            A personal developer operating system
+                            interface built to visualize goals,
+                            skills, projects and productivity.
                         </p>
 
                         <div class="project-tags">
@@ -623,102 +614,137 @@
 
                     </div>
 
-                    <span class="project-arrow">
-                        ↗
-                    </span>
+                    <div class="project-arrow">↗</div>
 
                 </article>
 
 
+                <!-- SIGNBRIDGE -->
+
                 <article
                     class="project-card"
-                    data-project="CELEBRATION"
+                    data-link="https://kusheenbhat05-wq.github.io/signbridge/"
+                    tabindex="0"
+                    role="link"
                 >
 
-                    <div class="project-number">
-                        02
-                    </div>
+                    <span class="project-number">03</span>
 
                     <div class="project-icon">
-                        C
+                        SB
                     </div>
 
                     <div class="project-info">
 
-                        <span>INTERACTIVE EXPERIENCE</span>
+                        <span>ACCESSIBILITY</span>
 
-                        <h4>
-                            Interactive Celebration
-                        </h4>
+                        <h4>SignBridge</h4>
 
                         <p>
-                            An animated interactive web
-                            experience built with JavaScript.
+                            An interactive communication interface
+                            exploring gesture recognition and
+                            sign-to-text interaction.
                         </p>
 
                         <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
+                            <span>MediaPipe</span>
                             <span>JavaScript</span>
+                            <span>Accessibility</span>
                         </div>
 
                     </div>
 
-                    <span class="project-arrow">
-                        ↗
-                    </span>
+                    <div class="project-arrow">↗</div>
 
                 </article>
 
 
+                <!-- SMART TRAVEL -->
+
                 <article
                     class="project-card"
-                    data-project="KUSHEEN.OS"
+                    data-link="https://kusheenbhat05-wq.github.io/smart-travel/"
+                    tabindex="0"
+                    role="link"
                 >
 
-                    <div class="project-number">
-                        03
-                    </div>
+                    <span class="project-number">04</span>
 
                     <div class="project-icon">
-                        K
+                        ST
                     </div>
 
                     <div class="project-info">
 
-                        <span>EXPERIMENTAL</span>
+                        <span>TRAVEL PLATFORM</span>
 
-                        <h4>
-                            KUSHEEN.OS
-                        </h4>
+                        <h4>Smart Travel</h4>
 
                         <p>
-                            A live digital twin representing
-                            my developer identity.
+                            A travel planning interface combining
+                            itinerary planning, weather, maps,
+                            budget and packing tools.
                         </p>
 
                         <div class="project-tags">
                             <span>JavaScript</span>
                             <span>APIs</span>
-                            <span>UI</span>
+                            <span>Maps</span>
                         </div>
 
                     </div>
 
-                    <span class="project-arrow">
-                        ↗
-                    </span>
+                    <div class="project-arrow">↗</div>
 
                 </article>
+
+
+                <!-- AI RESUME ANALYZER -->
+
+                <article
+                    class="project-card"
+                    data-link="https://kusheenbhat05-wq.github.io/ai-resume-analyzer/"
+                    tabindex="0"
+                    role="link"
+                >
+
+                    <span class="project-number">05</span>
+
+                    <div class="project-icon">
+                        AI
+                    </div>
+
+                    <div class="project-info">
+
+                        <span>CAREER TOOL</span>
+
+                        <h4>AI Resume Analyzer</h4>
+
+                        <p>
+                            A browser-based resume analysis tool that
+                            evaluates skills, keywords and improvement
+                            areas from resume text.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>Resume AI</span>
+                            <span>Analysis</span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-arrow">↗</div>
+
+                </article>
+
 
             </div>
 
         </section>
 
 
-        <!-- =====================================
-             GITHUB
-        ====================================== -->
+        <!-- ================= GITHUB ================= -->
 
         <section
             class="section"
@@ -728,18 +754,13 @@
             <div class="section-heading">
 
                 <div>
-                    <span class="section-number">
-                        04 / GITHUB
-                    </span>
-
-                    <h3>
-                        GitHub Pulse
-                    </h3>
+                    <span class="section-number">04 / GITHUB</span>
+                    <h3>Code Activity</h3>
                 </div>
 
-                <span class="section-description">
-                    Public developer activity
-                </span>
+                <p class="section-description">
+                    Live developer profile data.
+                </p>
 
             </div>
 
@@ -748,23 +769,23 @@
 
                 <div class="github-main">
 
-                    <div class="github-avatar">
+                    <div
+                        class="github-avatar"
+                        id="githubAvatar"
+                    >
                         KB
                     </div>
 
                     <div>
 
-                        <span>
-                            GITHUB USER
-                        </span>
+                        <span>GITHUB PROFILE</span>
 
-                        <h4>
+                        <h4 id="githubUsername">
                             kusheenbhat05-wq
                         </h4>
 
-                        <p>
-                            Public repositories and
-                            development activity.
+                        <p id="githubBio">
+                            Developer · Builder · Learner
                         </p>
 
                     </div>
@@ -775,43 +796,28 @@
                 <div class="github-stats">
 
                     <div>
-                        <strong id="repoCount">
-                            —
-                        </strong>
-
-                        <span>
-                            REPOSITORIES
-                        </span>
+                        <strong id="githubRepos">--</strong>
+                        <span>REPOSITORIES</span>
                     </div>
 
                     <div>
-                        <strong id="followerCount">
-                            —
-                        </strong>
-
-                        <span>
-                            FOLLOWERS
-                        </span>
+                        <strong id="githubFollowers">--</strong>
+                        <span>FOLLOWERS</span>
                     </div>
 
                     <div>
-                        <strong id="followingCount">
-                            —
-                        </strong>
-
-                        <span>
-                            FOLLOWING
-                        </span>
+                        <strong id="githubFollowing">--</strong>
+                        <span>FOLLOWING</span>
                     </div>
 
                 </div>
 
 
                 <a
+                    class="github-button"
                     href="https://github.com/kusheenbhat05-wq"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="github-button"
                 >
                     OPEN GITHUB ↗
                 </a>
@@ -821,9 +827,7 @@
         </section>
 
 
-        <!-- =====================================
-             GOALS
-        ====================================== -->
+        <!-- ================= GOALS ================= -->
 
         <section
             class="section"
@@ -833,129 +837,117 @@
             <div class="section-heading">
 
                 <div>
-                    <span class="section-number">
-                        05 / GOALS
-                    </span>
-
-                    <h3>
-                        Mission Control
-                    </h3>
+                    <span class="section-number">05 / GOALS</span>
+                    <h3>Current Objectives</h3>
                 </div>
 
-                <span class="section-description">
-                    Current objectives
-                </span>
+                <p class="section-description">
+                    Things I'm actively working toward.
+                </p>
 
             </div>
 
 
             <div class="goals-panel">
 
-                <div class="goal-item">
+                <div
+                    class="goal-item"
+                    data-goal
+                >
 
                     <button
                         class="goal-check"
-                        data-goal="0"
+                        type="button"
+                        aria-label="Complete goal"
                     >
                         ✓
                     </button>
 
                     <div>
-                        <strong>
-                            Build a professional portfolio
-                        </strong>
-
-                        <span>
-                            Career / Development
-                        </span>
+                        <strong>Build stronger frontend projects</strong>
+                        <span>Focus on polished, useful interfaces.</span>
                     </div>
 
                 </div>
 
 
-                <div class="goal-item">
+                <div
+                    class="goal-item"
+                    data-goal
+                >
 
                     <button
                         class="goal-check"
-                        data-goal="1"
+                        type="button"
+                        aria-label="Complete goal"
                     >
                         ✓
                     </button>
 
                     <div>
-                        <strong>
-                            Improve DSA fundamentals
-                        </strong>
-
-                        <span>
-                            Learning
-                        </span>
+                        <strong>Improve DSA & problem solving</strong>
+                        <span>Practice consistently and strengthen fundamentals.</span>
                     </div>
 
                 </div>
 
 
-                <div class="goal-item">
+                <div
+                    class="goal-item"
+                    data-goal
+                >
 
                     <button
                         class="goal-check"
-                        data-goal="2"
+                        type="button"
+                        aria-label="Complete goal"
                     >
                         ✓
                     </button>
 
                     <div>
-                        <strong>
-                            Build internship-ready projects
-                        </strong>
-
-                        <span>
-                            Career
-                        </span>
+                        <strong>Prepare for internships</strong>
+                        <span>Build portfolio-ready work and technical confidence.</span>
                     </div>
 
                 </div>
 
 
-                <div class="goal-item">
+                <div
+                    class="goal-item"
+                    data-goal
+                >
 
                     <button
                         class="goal-check"
-                        data-goal="3"
+                        type="button"
+                        aria-label="Complete goal"
                     >
                         ✓
                     </button>
 
                     <div>
-                        <strong>
-                            Secure an internship
-                        </strong>
-
-                        <span>
-                            Career Goal
-                        </span>
+                        <strong>Keep learning consistently</strong>
+                        <span>Turn small daily progress into long-term growth.</span>
                     </div>
 
                 </div>
 
-            </div>
 
+                <div class="goal-progress">
 
-            <div class="goal-progress">
+                    <div>
+                        <span>OBJECTIVE COMPLETION</span>
+                        <strong id="goalPercentage">0%</strong>
+                    </div>
 
-                <div>
-                    <span>MISSION PROGRESS</span>
+                    <div class="large-progress">
+                        <span
+                            id="goalProgressBar"
+                            style="width:0%"
+                        ></span>
+                    </div>
 
-                    <strong id="goalPercentage">
-                        0%
-                    </strong>
-                </div>
-
-                <div class="large-progress">
-                    <span
-                        id="goalProgressBar"
-                        style="width:0%"
-                    ></span>
                 </div>
 
             </div>
@@ -963,9 +955,7 @@
         </section>
 
 
-        <!-- =====================================
-             FOCUS
-        ====================================== -->
+        <!-- ================= FOCUS ================= -->
 
         <section
             class="section"
@@ -975,18 +965,13 @@
             <div class="section-heading">
 
                 <div>
-                    <span class="section-number">
-                        06 / FOCUS
-                    </span>
-
-                    <h3>
-                        Focus Core
-                    </h3>
+                    <span class="section-number">06 / FOCUS</span>
+                    <h3>Deep Work Mode</h3>
                 </div>
 
-                <span class="section-description">
-                    Deep work session
-                </span>
+                <p class="section-description">
+                    25-minute focused development session.
+                </p>
 
             </div>
 
@@ -997,34 +982,33 @@
 
                     <div class="timer-ring">
 
-                        <svg viewBox="0 0 220 220">
+                        <svg
+                            viewBox="0 0 240 240"
+                            aria-hidden="true"
+                        >
 
                             <circle
                                 class="timer-track"
-                                cx="110"
-                                cy="110"
+                                cx="120"
+                                cy="120"
                                 r="94"
                             ></circle>
 
                             <circle
                                 class="timer-progress"
-                                id="timerProgress"
-                                cx="110"
-                                cy="110"
+                                cx="120"
+                                cy="120"
                                 r="94"
                             ></circle>
 
                         </svg>
 
+
                         <div class="timer-value">
 
-                            <strong id="timerDisplay">
-                                25:00
-                            </strong>
+                            <strong>25:00</strong>
 
-                            <span>
-                                FOCUS SESSION
-                            </span>
+                            <span>FOCUS SESSION</span>
 
                         </div>
 
@@ -1034,22 +1018,17 @@
                     <div class="timer-controls">
 
                         <button
-                            id="startTimer"
                             class="primary-button"
+                            id="startTimer"
+                            type="button"
                         >
                             START
                         </button>
 
                         <button
-                            id="pauseTimer"
                             class="secondary-button"
-                        >
-                            PAUSE
-                        </button>
-
-                        <button
                             id="resetTimer"
-                            class="secondary-button"
+                            type="button"
                         >
                             RESET
                         </button>
@@ -1061,18 +1040,13 @@
 
                 <div class="focus-info">
 
-                    <span>
-                        CURRENT OBJECTIVE
-                    </span>
+                    <span>DEEP WORK PROTOCOL</span>
 
-                    <h4>
-                        Build. Learn. Improve.
-                    </h4>
+                    <h4>One task.<br>Zero distractions.</h4>
 
                     <p>
-                        Stay focused for 25 minutes.
-                        Your completed sessions will
-                        be tracked locally.
+                        Use this session to work on one meaningful
+                        development task without switching context.
                     </p>
 
                 </div>
@@ -1082,9 +1056,7 @@
         </section>
 
 
-        <!-- =====================================
-             CONSOLE
-        ====================================== -->
+        <!-- ================= CONSOLE ================= -->
 
         <section
             class="section"
@@ -1094,18 +1066,13 @@
             <div class="section-heading">
 
                 <div>
-                    <span class="section-number">
-                        07 / CONSOLE
-                    </span>
-
-                    <h3>
-                        System Console
-                    </h3>
+                    <span class="section-number">07 / CONSOLE</span>
+                    <h3>System Console</h3>
                 </div>
 
-                <span class="section-description">
-                    Interactive command interface
-                </span>
+                <p class="section-description">
+                    Try a command.
+                </p>
 
             </div>
 
@@ -1119,7 +1086,7 @@
                     <span></span>
 
                     <strong>
-                        kusheen@digital-twin:~
+                        kusheen@os:~$
                     </strong>
 
                 </div>
@@ -1130,70 +1097,61 @@
                     id="consoleOutput"
                 >
 
-                    <p>
-                        KUSHEEN.OS system initialized.
-                    </p>
+                    <div>
+                        KUSHEEN.OS v1.0 initialized.
+                    </div>
 
-                    <p>
-                        Type <b>help</b> to see available
-                        commands.
-                    </p>
+                    <div>
+                        Type <strong>help</strong> to view available commands.
+                    </div>
+
+                    <div>
+                        System ready.
+                    </div>
 
                 </div>
 
 
-                <div class="console-input">
+                <form
+                    class="console-input"
+                    id="consoleForm"
+                >
 
-                    <span>
-                        >
-                    </span>
+                    <span>&gt;</span>
 
                     <input
                         type="text"
                         id="consoleInput"
-                        placeholder="type a command..."
                         autocomplete="off"
+                        placeholder="type a command..."
+                        aria-label="Console command"
                     >
 
-                </div>
+                </form>
 
             </div>
 
         </section>
 
 
-        <!-- =====================================
-             FOOTER
-        ====================================== -->
+        <!-- ================= FOOTER ================= -->
 
         <footer>
 
-            <div>
+            <span>
+                © 2026 <strong>Kusheen Bhat</strong>
+            </span>
 
-                <strong>
-                    KUSHEEN.OS
-                </strong>
-
-                <span>
-                    Digital Twin v1.0
-                </span>
-
-            </div>
-
-            <div>
-
-                Built with HTML · CSS · JavaScript
-
-            </div>
+            <span>
+                BUILT WITH CURIOSITY · CODE · COFFEE
+            </span>
 
         </footer>
 
     </main>
 
 
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================== -->
+    <!-- ================= SCRIPT ================= -->
 
     <script src="script.js"></script>
 
