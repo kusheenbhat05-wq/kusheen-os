@@ -299,22 +299,12 @@ updateGoals();
 
 /* =========================================================
    7. FOCUS TIMER
-========================================================= */
+   ========================================================= */
 
-const timerDisplay =
-    document.getElementById("timerMintues");
-
-const startTimer =
-    document.getElementById("startTimer");
-
-const pauseTimer =
-    document.getElementById("pauseTimer");
-
-const resetTimer =
-    document.getElementById("resetTimer");
-
-const timerProgress =
-    document.getElementById("timerProgress");
+const timerDisplay = document.getElementById("timerMinutes");
+const startTimer = document.getElementById("startTimer");
+const resetTimer = document.getElementById("resetTimer");
+const timerProgress = document.getElementById("timerProgress");
 
 const TOTAL_SECONDS = 25 * 60;
 
@@ -323,38 +313,30 @@ let timerInterval = null;
 
 function updateTimerDisplay() {
 
-    const minutes =
-        Math.floor(
-            remainingSeconds / 60
-        );
-
-    const seconds =
-        remainingSeconds % 60;
+    const minutes = Math.floor(remainingSeconds / 60);
+    const seconds = remainingSeconds % 60;
 
     const formatted =
         `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 
     if (timerDisplay) {
-        timerDisplay.textContent =
-            formatted;
+        timerDisplay.textContent = formatted;
     }
 
     if (timerProgress) {
 
-        const circumference = 590;
+        const circumference = 578;
 
         const progress =
-            remainingSeconds /
-            TOTAL_SECONDS;
+            remainingSeconds / TOTAL_SECONDS;
 
         const offset =
-            circumference -
-            progress * circumference;
+            circumference - (progress * circumference);
 
-        timerProgress.style.strokeDashoffset =
-            offset;
+        timerProgress.style.strokeDashoffset = offset;
     }
 }
+
 
 function startFocusTimer() {
 
@@ -362,11 +344,15 @@ function startFocusTimer() {
         return;
     }
 
-    addConsoleMessage(
-        "Focus session started."
-    );
+    if (remainingSeconds <= 0) {
+        remainingSeconds = TOTAL_SECONDS;
+    }
 
     timerInterval = setInterval(() => {
+
+        remainingSeconds--;
+
+        updateTimerDisplay();
 
         if (remainingSeconds <= 0) {
 
@@ -374,40 +360,23 @@ function startFocusTimer() {
             timerInterval = null;
 
             addConsoleMessage(
-                "Focus session complete."
+                "Focus session complete. 🔥"
             );
 
-            alert(
-                "Focus session complete! 🔥"
-            );
+            alert("Focus session complete! 🔥");
 
-            remainingSeconds =
-                TOTAL_SECONDS;
+            remainingSeconds = TOTAL_SECONDS;
 
             updateTimerDisplay();
-
-            return;
         }
 
-        remainingSeconds--;
-
-        updateTimerDisplay();
-
     }, 1000);
+
+    addConsoleMessage(
+        "Focus session started."
+    );
 }
 
-function pauseFocusTimer() {
-
-    if (timerInterval !== null) {
-
-        clearInterval(timerInterval);
-        timerInterval = null;
-
-        addConsoleMessage(
-            "Focus session paused."
-        );
-    }
-}
 
 function resetFocusTimer() {
 
@@ -415,8 +384,7 @@ function resetFocusTimer() {
 
     timerInterval = null;
 
-    remainingSeconds =
-        TOTAL_SECONDS;
+    remainingSeconds = TOTAL_SECONDS;
 
     updateTimerDisplay();
 
@@ -425,6 +393,7 @@ function resetFocusTimer() {
     );
 }
 
+
 if (startTimer) {
     startTimer.addEventListener(
         "click",
@@ -432,12 +401,6 @@ if (startTimer) {
     );
 }
 
-if (pauseTimer) {
-    pauseTimer.addEventListener(
-        "click",
-        pauseFocusTimer
-    );
-}
 
 if (resetTimer) {
     resetTimer.addEventListener(
@@ -446,9 +409,13 @@ if (resetTimer) {
     );
 }
 
+
 updateTimerDisplay();
 
 
+/* =========================================================
+   8. GITHUB API
+   ========================================================= */
 /* =========================================================
    8. GITHUB API
 ========================================================= */
