@@ -1,11 +1,11 @@
 /* =========================================================
    KUSHEEN.OS — SYSTEM JAVASCRIPT
-   ========================================================= */
+========================================================= */
 
 
 /* =========================================================
    1. LIVE CLOCK
-   ========================================================= */
+========================================================= */
 
 const clock = document.getElementById("clock");
 
@@ -29,13 +29,13 @@ setInterval(updateClock, 1000);
 
 
 /* =========================================================
-   2. CURRENT STATE SYSTEM
-   ========================================================= */
+   2. CURRENT STATE
+========================================================= */
 
 const currentState = document.getElementById("currentState");
 const stateButtons = document.querySelectorAll(".state-button");
 
-const savedState =
+let savedState =
     localStorage.getItem("kusheenState") || "BUILDING";
 
 if (currentState) {
@@ -54,7 +54,11 @@ stateButtons.forEach(button => {
 
         const state = button.dataset.state;
 
-        currentState.textContent = state;
+        savedState = state;
+
+        if (currentState) {
+            currentState.textContent = state;
+        }
 
         localStorage.setItem(
             "kusheenState",
@@ -77,12 +81,12 @@ stateButtons.forEach(button => {
 
 /* =========================================================
    3. MOBILE SIDEBAR
-   ========================================================= */
+========================================================= */
 
 const sidebar = document.getElementById("sidebar");
 const menuButton = document.getElementById("menuButton");
 
-if (menuButton) {
+if (menuButton && sidebar) {
 
     menuButton.addEventListener("click", () => {
         sidebar.classList.toggle("open");
@@ -94,7 +98,7 @@ document.querySelectorAll(".nav-link").forEach(link => {
 
     link.addEventListener("click", () => {
 
-        if (window.innerWidth <= 850) {
+        if (window.innerWidth <= 800 && sidebar) {
             sidebar.classList.remove("open");
         }
 
@@ -105,21 +109,21 @@ document.querySelectorAll(".nav-link").forEach(link => {
 
 /* =========================================================
    4. ACTIVE NAVIGATION
-   ========================================================= */
+========================================================= */
 
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav-link");
 
-window.addEventListener("scroll", () => {
+function updateActiveNavigation() {
 
     let currentSection = "";
 
     sections.forEach(section => {
 
         const sectionTop =
-            section.offsetTop - 180;
+            section.getBoundingClientRect().top;
 
-        if (window.scrollY >= sectionTop) {
+        if (sectionTop <= 180) {
             currentSection = section.id;
         }
 
@@ -137,13 +141,20 @@ window.addEventListener("scroll", () => {
         }
 
     });
+}
 
-});
+window.addEventListener(
+    "scroll",
+    updateActiveNavigation,
+    { passive: true }
+);
+
+updateActiveNavigation();
 
 
 /* =========================================================
    5. THEME SYSTEM
-   ========================================================= */
+========================================================= */
 
 const themeButton =
     document.getElementById("themeButton");
@@ -153,53 +164,22 @@ let lightMode =
 
 function applyTheme() {
 
-    if (lightMode) {
+    document.body.classList.toggle(
+        "light",
+        lightMode
+    );
 
-        document.documentElement.style.setProperty(
-            "--bg",
-            "#f4f4f8"
+    if (themeButton) {
+
+        themeButton.textContent =
+            lightMode ? "☀" : "◐";
+
+        themeButton.setAttribute(
+            "aria-label",
+            lightMode
+                ? "Switch to dark theme"
+                : "Switch to light theme"
         );
-
-        document.documentElement.style.setProperty(
-            "--bg-2",
-            "#ffffff"
-        );
-
-        document.documentElement.style.setProperty(
-            "--text",
-            "#111118"
-        );
-
-        document.documentElement.style.setProperty(
-            "--muted",
-            "#666675"
-        );
-
-        document.body.style.color = "#111118";
-
-    } else {
-
-        document.documentElement.style.setProperty(
-            "--bg",
-            "#050509"
-        );
-
-        document.documentElement.style.setProperty(
-            "--bg-2",
-            "#090912"
-        );
-
-        document.documentElement.style.setProperty(
-            "--text",
-            "#f5f5f7"
-        );
-
-        document.documentElement.style.setProperty(
-            "--muted",
-            "#858594"
-        );
-
-        document.body.style.color = "#f5f5f7";
     }
 }
 
@@ -231,15 +211,14 @@ if (themeButton) {
 
 /* =========================================================
    6. GOAL TRACKER
-   ========================================================= */
+========================================================= */
 
 const goalButtons =
     document.querySelectorAll(".goal-check");
 
-const savedGoals =
+let savedGoals =
     JSON.parse(
-        localStorage.getItem("kusheenGoals") ||
-        "[]"
+        localStorage.getItem("kusheenGoals") || "[]"
     );
 
 function updateGoals() {
@@ -250,13 +229,12 @@ function updateGoals() {
 
         if (savedGoals[index]) {
 
-            button.classList.add("completed");
-
+            button.classList.add("checked");
             completed++;
 
         } else {
 
-            button.classList.remove("completed");
+            button.classList.remove("checked");
 
         }
 
@@ -290,7 +268,6 @@ function updateGoals() {
         progressBar.style.width =
             `${percentage}%`;
     }
-
 }
 
 goalButtons.forEach((button, index) => {
@@ -322,7 +299,7 @@ updateGoals();
 
 /* =========================================================
    7. FOCUS TIMER
-   ========================================================= */
+========================================================= */
 
 const timerDisplay =
     document.getElementById("timerDisplay");
@@ -367,16 +344,16 @@ function updateTimerDisplay() {
         const circumference = 590;
 
         const progress =
-            remainingSeconds / TOTAL_SECONDS;
+            remainingSeconds /
+            TOTAL_SECONDS;
 
         const offset =
             circumference -
-            (progress * circumference);
+            progress * circumference;
 
         timerProgress.style.strokeDashoffset =
             offset;
     }
-
 }
 
 function startFocusTimer() {
@@ -417,7 +394,6 @@ function startFocusTimer() {
         updateTimerDisplay();
 
     }, 1000);
-
 }
 
 function pauseFocusTimer() {
@@ -425,14 +401,12 @@ function pauseFocusTimer() {
     if (timerInterval !== null) {
 
         clearInterval(timerInterval);
-
         timerInterval = null;
 
         addConsoleMessage(
             "Focus session paused."
         );
     }
-
 }
 
 function resetFocusTimer() {
@@ -449,7 +423,6 @@ function resetFocusTimer() {
     addConsoleMessage(
         "Focus timer reset."
     );
-
 }
 
 if (startTimer) {
@@ -478,7 +451,7 @@ updateTimerDisplay();
 
 /* =========================================================
    8. GITHUB API
-   ========================================================= */
+========================================================= */
 
 const githubUsername =
     "kusheenbhat05-wq";
@@ -552,17 +525,15 @@ async function loadGitHubData() {
         addConsoleMessage(
             "GitHub synchronization unavailable."
         );
-
     }
-
 }
 
 loadGitHubData();
 
 
 /* =========================================================
-   9. PROJECT COUNT
-   ========================================================= */
+   9. PROJECT SYSTEM
+========================================================= */
 
 const projectCards =
     document.querySelectorAll(
@@ -584,8 +555,85 @@ if (projectCount) {
 
 
 /* =========================================================
-   10. CONSOLE SYSTEM
-   ========================================================= */
+   PROJECT LINKS
+========================================================= */
+
+const projectLinks = {
+
+    "DEVORA":
+        "https://kusheenbhat05-wq.github.io/devora-developer-dashboard/",
+
+    "KUSHEEN.OS":
+        "https://kusheenbhat05-wq.github.io/kusheen-os/",
+
+    "SignBridge":
+        "https://kusheenbhat05-wq.github.io/signbridge/",
+
+    "Smart Travel":
+        "https://kusheenbhat05-wq.github.io/smart-travel/",
+
+    "AI Resume Analyzer":
+        "https://kusheenbhat05-wq.github.io/ai-resume-analyzer/"
+};
+
+
+/* =========================================================
+   PROJECT CLICK HANDLER
+========================================================= */
+
+projectCards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const project =
+            card.dataset.project;
+
+        if (projectLinks[project]) {
+
+            window.open(
+                projectLinks[project],
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+        } else {
+
+            addConsoleMessage(
+                `Project selected → ${project}`
+            );
+
+        }
+
+    });
+
+    card.setAttribute(
+        "tabindex",
+        "0"
+    );
+
+    card.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key === "Enter" ||
+                event.key === " "
+            ) {
+
+                event.preventDefault();
+                card.click();
+
+            }
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   10. CONSOLE
+========================================================= */
 
 const consoleInput =
     document.getElementById(
@@ -607,7 +655,7 @@ function addConsoleMessage(message) {
         document.createElement("p");
 
     line.innerHTML =
-        `<span style="color:#8b5cf6">›</span> ${message}`;
+        `<span style="color:#53e6ff">›</span> ${message}`;
 
     consoleOutput.appendChild(line);
 
@@ -653,7 +701,7 @@ function runCommand(command) {
         case "status":
 
             addConsoleMessage(
-                `Current state: ${currentState.textContent}`
+                `Current state: ${currentState ? currentState.textContent : savedState}`
             );
 
             break;
@@ -671,7 +719,7 @@ function runCommand(command) {
         case "projects":
 
             addConsoleMessage(
-                `${projectCards.length} projects currently registered in KUSHEEN.OS.`
+                `${projectCards.length} projects registered in KUSHEEN.OS.`
             );
 
             break;
@@ -686,7 +734,7 @@ function runCommand(command) {
             break;
 
 
-        case "goals":
+        case "goals": {
 
             const completedGoals =
                 savedGoals.filter(
@@ -698,6 +746,7 @@ function runCommand(command) {
             );
 
             break;
+        }
 
 
         case "clear":
@@ -714,7 +763,6 @@ function runCommand(command) {
             );
 
     }
-
 }
 
 if (consoleInput) {
@@ -734,33 +782,51 @@ if (consoleInput) {
 
         }
     );
-
 }
 
 
 /* =========================================================
-   11. PROJECT INTERACTION
-   ========================================================= */
+   11. KEYBOARD SHORTCUTS
+========================================================= */
 
-projectCards.forEach(card => {
+document.addEventListener(
+    "keydown",
+    event => {
 
-    card.addEventListener("click", () => {
+        /* Press / to focus console */
 
-        const project =
-            card.dataset.project;
+        if (
+            event.key === "/" &&
+            document.activeElement !== consoleInput
+        ) {
 
-        addConsoleMessage(
-            `Project selected → ${project}`
-        );
+            event.preventDefault();
 
-    });
+            if (consoleInput) {
+                consoleInput.focus();
+            }
+        }
 
-});
+
+        /* Escape closes mobile menu */
+
+        if (
+            event.key === "Escape" &&
+            sidebar
+        ) {
+
+            sidebar.classList.remove(
+                "open"
+            );
+        }
+
+    }
+);
 
 
 /* =========================================================
-   12. INITIAL SYSTEM MESSAGE
-   ========================================================= */
+   12. INITIAL SYSTEM MESSAGES
+========================================================= */
 
 setTimeout(() => {
 
@@ -769,6 +835,7 @@ setTimeout(() => {
     );
 
 }, 800);
+
 
 setTimeout(() => {
 
