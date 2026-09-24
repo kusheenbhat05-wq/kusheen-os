@@ -302,7 +302,7 @@ updateGoals();
 ========================================================= */
 
 const timerDisplay =
-    document.getElementById("timerDisplay");
+    document.getElementById("timerMintues");
 
 const startTimer =
     document.getElementById("startTimer");
